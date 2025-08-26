@@ -1,0 +1,13 @@
+@use 'topbar-constants' as const;
+@use '/src/scss/utils/' as *;
+ 
+:root {
+    --light-brown: #{const.$ligth-brown};
+    --logo-width: #{const.$logo-width};
+}
+
+@include xl {
+    :root {
+        --logo-width: #{const.$logo-width-mobile};
+    }
+}

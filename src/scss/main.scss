@@ -1,0 +1,27 @@
+@forward 'base/index';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%
+}
+
+section {
+    display: block;
+    position: relative;
+}
+
+body {
+    background-color: var(--main-background-color);
+    font-family: var(--main-font-family);
+    color: var(--main-color-black);
+    font-optical-sizing: auto;
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 140%;
+    min-height: 100%;
+    margin: 0;
+}

@@ -1,0 +1,25 @@
+@use 'section-team-constants' as const;
+@use '/src/scss/utils/' as *;
+
+:root {
+    --section-team-background-attachment: #{const.$section-team-background-attachment};
+    --section-team-background-image: #{const.$section-team-background-image};
+    --section-team-conact-color: #{const.$section-team-contact-color};
+    --section-team-conact-background-color: #{const.$section-team-contact-background-color};
+    --section-team-contact-padding: #{const.$section-team-contact-padding};
+    --section-team-contact-width: #{const.$section-team-contact-width};
+    --section-team-header-h2-contact-font-size: #{const.$section-team-header-h2-contact-font-size};
+    --section-team-header-h6-contact-font-size: #{const.$section-team-header-h6-contact-font-size};
+    --section-team-header-p-contact-font-size: #{const.$section-team-header-p-contact-font-size};
+}
+
+@include xl {
+    :root {
+        --section-team-background-attachment: #{const.$section-team-background-attachment-mobile};
+        --section-team-contact-padding: #{const.$section-team-contact-padding-mobile};
+        --section-team-contact-width: #{const.$section-team-contact-width-mobile};
+        --section-team-header-h2-contact-font-size: #{const.$section-team-header-h2-contact-font-size-mobile};
+        --section-team-header-h6-contact-font-size: #{const.$section-team-header-h6-contact-font-size-mobile};
+        --section-team-header-p-contact-font-size: #{const.$section-team-header-p-contact-font-size-mobile};
+    }
+}

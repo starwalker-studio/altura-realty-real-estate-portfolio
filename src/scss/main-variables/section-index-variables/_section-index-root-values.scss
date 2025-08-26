@@ -1,0 +1,31 @@
+@use '/src/scss/base/main-colors' as color;
+@use '/src/scss/base/main-constants' as main-const;
+@use 'section-constants' as const;
+@use '/src/scss/utils' as *;
+ 
+:root {
+    --background-position: #{const.$background-position};
+    --contianer-grid-color: #{color.$main-color};
+    --background-image-transform: #{const.$background-image-transform};
+    --background-image-gradient: #{const.$background-image-gradient};
+    --container-font-family: #{main-const.$arapey-serif};
+    --container-header-font-size: #{const.$container-header-font-size};
+    --container-text-font-size: #{const.$container-text-font-size};
+}
+
+// mobile responsive
+
+@include xl {
+    :root {
+        --background-position: #{const.$background-position-mobile};
+        --container-header-font-size: #{const.$container-header-font-size-mobile};
+        --container-text-font-size: #{const.$container-text-font-size-mobile};
+    }
+}
+
+@include lg {
+    :root {
+        --container-header-font-size: #{const.$container-header-font-size-mobile};
+        --container-text-font-size: #{const.$container-text-font-size-mobile};
+    }
+}

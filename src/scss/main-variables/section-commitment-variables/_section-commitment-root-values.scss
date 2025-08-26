@@ -1,0 +1,19 @@
+@use 'section-commitment-constants' as const;
+@use '/src/scss/base/main-colors' as main-const;
+@use '/src/scss/utils/' as *;
+
+:root {
+    --section-commitment-background-img: #{const.$section-commitment-background-img};
+    --section-commitment-main-color: #{main-const.$main-color};
+    --section-commitment-background-attachment: #{const.$section-commitment-background-attachment};
+    --section-commitment-header: #{const.$section-commitment-header};
+    --section-commitment-text-size: #{const.$section-commitment-text-size};
+}
+
+@include xl {
+    :root {
+        --section-commitment-background-attachment: #{const.$section-commitment-background-attachment-mobile};        
+        --section-commitment-header: #{const.$section-commitment-header-mobile};
+        --section-commitment-text-size: #{const.$section-commitment-text-size-mobile};
+    }
+}

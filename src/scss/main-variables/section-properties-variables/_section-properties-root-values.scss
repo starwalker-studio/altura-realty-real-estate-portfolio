@@ -1,0 +1,28 @@
+@use 'section-properties-constants' as const;
+@use '/src/scss/utils/' as *;
+
+:root {
+    --section-properties-background-color: #{const.$section-properties-background-color};
+    --section-properties-grid: #{const.$section-properties-grid};
+    --section-properties-img-height: #{const.$section-properties-img-height};
+    --section-properties-text-size: #{const.$section-properties-text-size};
+    --section-properties-gap: #{const.$section-properties-gap};
+    --section-properties-header: #{const.$section-properties-header};
+}
+
+@include xl {
+    :root {
+        --section-properties-grid: #{const.$section-properties-grid-mobile};
+        --section-properties-img-height: #{const.$section-properties-img-height-mobile};
+        --section-properties-text-size: #{const.$section-properties-text-size-mobile};
+        --section-properties-gap: #{const.$section-properties-gap-mobile};
+        --section-properties-header: #{const.$section-properties-header-mobile};
+    }
+}
+
+@include xs {
+    :root {
+        --section-properties-text-size: #{const.$section-properties-text-size-mobile-xs};
+        --section-properties-header: #{const.$section-properties-header-mobile-xs};
+    }
+}

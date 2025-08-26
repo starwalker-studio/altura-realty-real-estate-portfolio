@@ -1,0 +1,15 @@
+$section-properties-background-color: #f2f2f2;
+$section-properties-grid: repeat(2, 1fr);
+$section-properties-gap: 36px 36px;
+$section-properties-img-height: 438px;
+$section-properties-text-size: 1em;
+$section-properties-header: 1.8rem;
+// mobile xl
+$section-properties-grid_mobile: repeat(1, 1fr);
+$section-properties-gap-mobile: none;
+$section-properties-img-height-mobile: 238px;
+$section-properties-text-size-mobile: .560em;
+$section-properties-header-mobile: 1.048rem;
+// mobile xs
+$section-properties-text-size-mobile-xs: .480em;
+$section-properties-header-mobile-xs: .848rem;

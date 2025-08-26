@@ -1,0 +1,8 @@
+@use 'main-colors' as color;
+@use 'main-constants' as const;
+
+:root {
+    --main-background-color: #{color.$background-color};
+    --main-font-family: #{const.$instrument-sans};
+    --main-color-black: #{color.$black};
+}

@@ -1,0 +1,24 @@
+@use '/src/scss/base/main-colors' as main-const;
+@use 'section-about-constants' as const;
+@use '/src/scss/utils/' as *;
+
+:root {
+    --section-about-background-color: #{main-const.$background-color};
+    --section-about-grid-columns: #{const.$section-about-grid-columns};
+    --section-about-header-size: #{const.$section-about-header-size};
+    --section-about-text-size: #{const.$section-about-text-size};
+}
+
+@include xl {
+    :root {
+        --section-about-header-size: #{const.$section-about-header-size-mobile};
+        --section-about-text-size: #{const.$section-about-text-size-mobile};    
+    }
+}
+
+@include lg {
+    :root {
+        --section-about-header-size: #{const.$section-about-header-size-mobile};
+        --section-about-text-size: #{const.$section-about-text-size-mobile};
+    }
+}

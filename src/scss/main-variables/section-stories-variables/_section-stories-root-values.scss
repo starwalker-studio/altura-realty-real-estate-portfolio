@@ -1,0 +1,22 @@
+@use '/src/scss/base/main-colors' as main-color;
+@use 'section-stories-constants' as const;
+@use '/src/scss/utils/' as *;
+
+:root {
+    --section-stories-background-color: #{main-color.$background-color};
+    --section-stories-flex-direction: #{const.$section-stories-flex-direction};
+    --section-stories-padding-top: #{const.$section-stories-padding-top};
+    --section-stories-padding-bottom: #{const.$section-stories-padding-bottom};
+    --section-stories-padding-left: #{const.$section-stories-padding-left};
+    --section-stories-padding-right: #{const.$section-stories-padding-right};
+}
+
+@include xl {
+    :root {
+        --section-stories-flex-direction: #{const.$section-stories-flex-direction-mobile};
+        --section-stories-padding-top: #{const.$section-stories-padding-top-mobile};
+        --section-stories-padding-bottom: #{const.$section-stories-padding-bottom-mobile};
+        --section-stories-padding-left: #{const.$section-stories-padding-left-mobile};
+        --section-stories-padding-right: #{const.$section-stories-padding-right-mobile};
+    }
+}

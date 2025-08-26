@@ -1,0 +1,104 @@
+@forward '/src/scss/main-variables/section-team-variables/';
+
+.section_work_w_us_background {
+    background-image: var(--section-team-background-image);
+    background-attachment: var(--section-team-background-attachment);
+    -webkit-background-position: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.work_w_us {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.work_w_us_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1300px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%;
+}
+
+.header_contact {
+    text-align: center;
+
+    h2 {
+        font-weight: 100;
+        text-transform: uppercase;
+        font-size: var(--section-team-header-h2-contact-font-size);
+        letter-spacing: 6px;
+    }
+
+    h6 {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: var(--section-team-header-h6-contact-font-size);
+    }
+}
+
+.contact {
+    width: var(--section-team-contact-width);
+    padding: var(--section-team-contact-padding);
+    position: relative;
+    color: var(--section-team-conact-color);
+    background-color: var(--section-team-conact-background-color);
+
+    p {
+        font-size: var(--section-team-header-p-contact-font-size);
+        text-align: center;
+        letter-spacing: 1px;
+        line-height: 1.4;
+    }
+}
+
+.contact_button {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding-top: 5ex;
+
+    button {
+        background: transparent;
+        border: 2px solid;
+        border-top-color: currentcolor;
+        border-right-color: currentcolor;
+        border-bottom-color: currentcolor;
+        border-left-color: currentcolor;
+        color: inherit;
+        cursor: pointer;
+        display: inline-block;
+        font-family: inherit;
+        font-size: 12px;
+        letter-spacing: inherit;
+        letter-spacing: 1.5px;
+        line-height: 1;
+        max-width: 100%;
+        overflow: hidden;
+        padding: 15px 30px;
+        text-align: center;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        text-transform: uppercase;
+        transition: all .2s;
+        white-space: nowrap;
+
+        &:hover {
+            background-color: #fff;
+            color: #000000d6;
+        }
+    }
+}

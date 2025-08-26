@@ -1,0 +1,23 @@
+@use 'section-services-constants' as const;
+@use '/src/scss/utils/' as *;
+
+:root {
+    --section-services-min-height: #{const.$section-services-min-height};
+    --section-services-color: #{const.$section-services-color};
+    --section-services-background-color: #{const.$section-services-background-color};
+    --section-services-flex-direction: #{const.$section-services-flex-direction};
+    --section-services-width: #{const.$section-services-width};
+    --section-services-transform: #{const.$section-services-transform};
+    --section-services-padding: #{const.$section-services-padding};
+}
+
+@include xl {
+    :root {
+        --section-services-min-height: #{const.$section-services-min-height-mobile};
+        --section-services-flex-direction: #{const.$section-services-flex-direction-mobile};
+        --section-services-img-display-mobile: #{const.$section-services-img-display-mobile};
+        --section-services-width: #{const.$section-services-width-mobile};
+        --section-services-transform: #{const.$section-services-transform-mobile};
+        --section-services-padding: #{const.$section-services-padding-mobile};
+    }
+}
