@@ -1,15 +1,15 @@
 import { useMobileScreen } from "../hooks/useMobileScreen";
-import { List } from 'react-bootstrap-icons';
+import { List, PersonVideo2, Houses, SuitcaseLg, ChatRightHeart } from 'react-bootstrap-icons';
 import { ENV } from "../../../env/env";
 import style from "./TopBar.module.scss";
 
-export const TopBar = () => {
+type TopBarProps = {
+  onNavigate: (section: 'about' | 'houses' | 'services' | 'stories') => void;
+}
 
-  const { isMobileScreen } = useMobileScreen();
+export const TopBar = ({ onNavigate }: TopBarProps) => {
 
-  console.log(isMobileScreen());
-
-  // mobile navbar example: https://terris-property-showcase-template.webflow.io/
+  const { isMobileScreen, handleClick, nav_transition } = useMobileScreen();
 
   return (
     <>
@@ -24,8 +24,8 @@ export const TopBar = () => {
             isMobileScreen() ?
               <>
                 <div className={style.mobile_icon}>
-                  <span>
-                    <List size={20}/>
+                  <span onClick={() => handleClick()}>
+                    <List size={25} />
                   </span>
                 </div>
               </>
@@ -33,9 +33,10 @@ export const TopBar = () => {
               <>
                 <div className={style.header_content}>
                   <ul>
-                    <li>Nosotros</li>
-                    <li>Propiedades</li>
-                    <li>Servicios</li>
+                    <li onClick={() => onNavigate('about')}>Nosotros</li>
+                    <li onClick={() => onNavigate('houses')}>Propiedades</li>
+                    <li onClick={() => onNavigate('services')}>Servicios</li>
+                    <li onClick={() => onNavigate('stories')}>Testimonios</li>
                   </ul>
                 </div>
                 <div className={style.button_wrapper}>
@@ -45,6 +46,39 @@ export const TopBar = () => {
           }
         </div>
       </div>
+      {
+        isMobileScreen() &&
+        <div className={style.nav_overlay}>
+          <nav className={style.nav_mobile} style={nav_transition}>
+            <div className={style.nav_mobile_container}>
+              <div className={style.display_pages}>
+                <h2>Secciones</h2>
+                <ul>
+                  <li onClick={() => {
+                    onNavigate('about')
+                    handleClick()
+                  }}><span><PersonVideo2 /><p>Nosotros</p></span></li>
+                  <li onClick={() => {
+                    onNavigate('houses')
+                    handleClick()
+                  }}><span><Houses /><p>Propiedades</p></span></li>
+                  <li onClick={() => {
+                    onNavigate('services')
+                    handleClick()
+                  }}><span><SuitcaseLg /><p>Servicios</p></span></li>
+                  <li onClick={() => {
+                    onNavigate('stories')
+                    handleClick()
+                  }}><span><ChatRightHeart /><p>Testimonios</p></span></li>
+                </ul>
+                <div className={style.button_wrapper_mobile}>
+                  <button>Contacto</button>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      }
     </>
   )
 }

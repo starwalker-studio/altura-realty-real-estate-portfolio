@@ -1,9 +1,10 @@
+import { forwardRef } from 'react';
 import style from './Stories.module.scss';
 
-export const Stories = () => {
+export const Stories = forwardRef<HTMLDivElement>((_, ref) => {
     return (
         <>
-            <section className={style.testimonial_section}>
+            <section ref={ref} className={style.testimonial_section}>
                 <div className={style.testimonial_section_grid}>
                     <div className={style.header}>
                         <h2>Testimonios</h2>
@@ -32,4 +33,4 @@ export const Stories = () => {
             </section>
         </>
     )
-}
+})

@@ -1,9 +1,10 @@
+import { forwardRef } from 'react';
 import style from './Services.module.scss';
 
-export const Services = () => {
+export const Services = forwardRef<HTMLDivElement>((_, ref) => {
     return (
         <>
-            <section className={style.background_color_solid}>
+            <section ref={ref} className={style.background_color_solid}>
                 <div className={style.services_component}>
                     <div className={style.image_container}>
                         <img src="/img/index-img/hall-index.png" alt="" />
@@ -28,4 +29,4 @@ export const Services = () => {
             </section>
         </>
     )
-}
+})

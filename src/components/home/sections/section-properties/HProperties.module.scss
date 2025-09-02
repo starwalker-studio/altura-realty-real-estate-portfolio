@@ -53,6 +53,7 @@
     // margin-bottom: 4px;
     overflow: hidden;
     position: relative;
+    cursor: pointer;
 
     img {
         height: 100%;
@@ -63,9 +64,11 @@
         width: 100%;
         border-style: none;
         max-width: 100%;
+        transition: .6s ease;
 
         &:hover {
-            transition: .3s;
+            transform: scale(1.1);
+            filter: brightness(50%); 
         }
     }
 }
