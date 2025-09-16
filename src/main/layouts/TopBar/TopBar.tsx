@@ -79,8 +79,8 @@ export const TopBar = ({ onNavigate }: TopBarProps) => {
                     handleClick()
                   }}><span><ChatRightHeart /><p>Testimonios</p></span></li>
                 </ul>
-                <div className={style.button_wrapper_mobile}>
-                  <button>Contacto</button>
+                <div className={style.button_wrapper_mobile} onClick={() => handleClick()}>
+                  <button>Cerrar Menú</button>
                 </div>
               </div>
             </div>

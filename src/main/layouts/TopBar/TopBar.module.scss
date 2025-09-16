@@ -182,7 +182,6 @@
 .nav_overlay {
     width: 100%;
     display: block;
-    width: 375px;
     position: absolute;
     top: 100%;
     left: 0;
@@ -193,20 +192,16 @@
 .nav_mobile {
     display: flex;
     width: 100%;
-    margin-top: 3.75rem;
     padding-bottom: 10rem;
     position: fixed;
     inset: 0%;
     top: 0%;
     right: 0%;
     overflow: scroll;
-    background-color: #fff;
-    height: calc(100vh - 52px) !important;
-    z-index: 1;
-    top: 0;
-    right: auto;
+    background-color: rgba(255, 255, 255, 0.753);
+    backdrop-filter: blur(10px);
+    height: 100%;
     flex-flow: column;
-    flex: none;
     justify-content: flex-start;
     align-items: stretch;
     z-index: 999999999;
@@ -215,7 +210,7 @@
 .nav_mobile_container {
     display: flex;
     flex-direction: column;
-    // align-items: center;
+    align-items: center;
     justify-content: flex-start;
     margin-bottom: 1rem;
     margin-left: 0;
@@ -251,7 +246,6 @@
 }
 
 .advertisement {
-    // background-color: goldenrod;
     text-align: center;
     font-size: smaller;
     font-weight: 500;
