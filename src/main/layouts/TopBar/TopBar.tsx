@@ -1,23 +1,31 @@
 import { useMobileScreen } from "../hooks/useMobileScreen";
 import { List, PersonVideo2, Houses, SuitcaseLg, ChatRightHeart } from 'react-bootstrap-icons';
+import { motion } from 'framer-motion';
 import { ENV } from "../../../env/env";
 import style from "./TopBar.module.scss";
+import { useScrollDown } from "../hooks/useScrollDown";
 
 type TopBarProps = {
-  onNavigate: (section: 'about' | 'houses' | 'services' | 'stories') => void;
+  onNavigate: (section: 'home' | 'about' | 'houses' | 'services' | 'stories') => void;
 }
 
 export const TopBar = ({ onNavigate }: TopBarProps) => {
 
   const { isMobileScreen, handleClick, nav_transition } = useMobileScreen();
+  const { scrolled, hidden, navbarEffects, navbarTransition } = useScrollDown();
 
   return (
     <>
-      <div className={style.navbar}>
+      <motion.nav
+        className={`${style.navbar} ${scrolled && style.navbar_scrolled} ${hidden && style.navbar_hidden}`}
+        initial="initial"
+        animate={hidden ? "hidden" : "visible"}
+        variants={navbarEffects}
+        transition={navbarTransition}>
         <div className={style.navbar_wrapper}>
           <div className={style.nav_logo_wrapper}>
-            <div className={style.logo}>
-              <img src={ENV.TOP_BAR.LOGO} alt="" />
+            <div className={`${style.logo} ${scrolled && style.logo_scrolled}`}>
+              <img src={ENV.TOP_BAR.LOGO} alt="" onClick={() => onNavigate('home')} />
             </div>
           </div>
           {
@@ -45,7 +53,7 @@ export const TopBar = ({ onNavigate }: TopBarProps) => {
               </>
           }
         </div>
-      </div>
+      </motion.nav>
       {
         isMobileScreen() &&
         <div className={style.nav_overlay}>

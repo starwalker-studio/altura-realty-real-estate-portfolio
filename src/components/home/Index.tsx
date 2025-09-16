@@ -5,13 +5,15 @@ import * as Section from "./sections";
 
 export const Index = () => {
 
+  const homeRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const housesRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
   const storiesRef = useRef<HTMLDivElement>(null);
 
-  const handleNavigate = (section: 'about' | 'houses' | 'services' | 'stories') => {
+  const handleNavigate = (section: 'home' | 'about' | 'houses' | 'services' | 'stories') => {
     const map = {
+      home: homeRef,
       about: aboutRef,
       houses: housesRef,
       services: servicesRef,
@@ -24,13 +26,15 @@ export const Index = () => {
   return (
     <>
       <TopBar onNavigate={handleNavigate} />
-      <Section.ImgIndex />
-      <Section.About ref={aboutRef} />
-      <Section.HProperties ref={housesRef} />
-      <Section.OurCommitment />
-      <Section.Services ref={servicesRef} />
-      <Section.Stories ref={storiesRef} />
-      <Section.Team />
+      <div ref={homeRef}>
+        <Section.ImgIndex />
+        <Section.About ref={aboutRef} />
+        <Section.HProperties ref={housesRef} />
+        <Section.OurCommitment />
+        <Section.Services ref={servicesRef} />
+        <Section.Stories ref={storiesRef} />
+        <Section.Team />
+      </div>
       <Footer />
     </>
   )
